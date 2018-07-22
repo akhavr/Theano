@@ -1116,7 +1116,7 @@ if (GpuArray_vector_add_fast(%(out)s, %(y)s, %(ind)s, %(params)s->set_instead_of
 
     def gpu_kernels(self, node, nodename):
         # We can't rely on numpy for this, it changes with the OS
-        CHARMAP = dict(int32='i', uint32='I',
+        CHARMAP = dict(int8='i', int16='i', int32='i', uint32='I',
                        int64='l', uint64='L',
                        float16='e', float32='f', float64='d')
         dtype_x = node.inputs[0].dtype
